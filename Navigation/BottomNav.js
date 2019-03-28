@@ -21,6 +21,7 @@ const BottomNav = createBottomTabNavigator(
           case "Auth":
             iconName = "account";
             iconType = "MaterialCommunityIcons";
+
             break;
           case "Coffee":
             iconName = "coffee";

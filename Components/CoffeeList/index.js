@@ -9,6 +9,7 @@ import coffeeshops from "./list";
 // Component
 import CoffeeItem from "./CoffeeItem";
 import CartButton from "../CartButton";
+import LogoutButton from "../LogoutButton";
 
 class CoffeeList extends Component {
   static navigationOptions = {
@@ -30,13 +31,15 @@ class CoffeeList extends Component {
     return (
       <Content>
         <List>{shops}</List>
+        {this.props.user ? <LogoutButton /> : <></>}
       </Content>
     );
   }
 }
 
 const mapStateToProps = state => ({
-  coffeeReducer: state.coffeeReducer
+  coffeeReducer: state.coffeeReducer,
+  user: state.authReducer.user
 });
 
 export default connect(mapStateToProps)(CoffeeList);
